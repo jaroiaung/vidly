@@ -2,16 +2,10 @@
 
 @{
     Layout = "_Layout";
+    ViewData["Title"] = "Villas";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<div>
+<h2>@ViewData["Title"]</h2>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -87,5 +81,5 @@
 }
     </tbody>
 </table>
-</body>
-</html>
+</div>
+
