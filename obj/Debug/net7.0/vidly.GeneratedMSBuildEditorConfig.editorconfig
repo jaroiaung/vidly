@@ -32,6 +32,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/Villas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGFzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/Villas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGFzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/Villas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGFzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/Villas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGFzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/Villas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlsbGFzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
