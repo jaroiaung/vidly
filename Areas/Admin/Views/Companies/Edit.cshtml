@@ -1,12 +1,19 @@
 @model vidly.Models.Company
 
 @{
-    Layout = "_Layout";
-    ViewData["Title"] = "Companies - Edit";
+    Layout = null;
 }
 
-<div>
-    <h4>@ViewData["Title"]</h4>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Company</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -53,4 +60,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-</div>
+
+</body>
+</html>

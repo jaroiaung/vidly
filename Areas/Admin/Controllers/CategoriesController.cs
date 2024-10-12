@@ -8,89 +8,90 @@ using Microsoft.EntityFrameworkCore;
 using vidly.Data;
 using vidly.Models;
 
-namespace vidly.Controllers
+namespace vidly.Areas.Admin.Controllers
 {
-    public class CompaniesController : Controller
+    [Area("Admin")]
+    public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CompaniesController(ApplicationDbContext context)
+        public CategoriesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Companies
+        // GET: Admin/Categories
         public async Task<IActionResult> Index()
         {
-              return _context.Companies != null ? 
-                          View(await _context.Companies.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Companies'  is null.");
+              return _context.Categories != null ? 
+                          View(await _context.Categories.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
         }
 
-        // GET: Companies/Details/5
+        // GET: Admin/Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null || _context.Categories == null)
             {
                 return NotFound();
             }
 
-            var company = await _context.Companies
+            var category = await _context.Categories
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (company == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(company);
+            return View(category);
         }
 
-        // GET: Companies/Create
+        // GET: Admin/Categories/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Companies/Create
+        // POST: Admin/Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,StreetAddress,City,State,PostalCode,PhoneNumber")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Name,DisplayOrder")] Category category)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(company);
+                _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(category);
         }
 
-        // GET: Companies/Edit/5
+        // GET: Admin/Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null || _context.Categories == null)
             {
                 return NotFound();
             }
 
-            var company = await _context.Companies.FindAsync(id);
-            if (company == null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
             {
                 return NotFound();
             }
-            return View(company);
+            return View(category);
         }
 
-        // POST: Companies/Edit/5
+        // POST: Admin/Categories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,StreetAddress,City,State,PostalCode,PhoneNumber")] Company company)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,DisplayOrder")] Category category)
         {
-            if (id != company.Id)
+            if (id != category.Id)
             {
                 return NotFound();
             }
@@ -99,12 +100,12 @@ namespace vidly.Controllers
             {
                 try
                 {
-                    _context.Update(company);
+                    _context.Update(category);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CompanyExists(company.Id))
+                    if (!CategoryExists(category.Id))
                     {
                         return NotFound();
                     }
@@ -115,49 +116,49 @@ namespace vidly.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(category);
         }
 
-        // GET: Companies/Delete/5
+        // GET: Admin/Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Companies == null)
+            if (id == null || _context.Categories == null)
             {
                 return NotFound();
             }
 
-            var company = await _context.Companies
+            var category = await _context.Categories
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (company == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return View(company);
+            return View(category);
         }
 
-        // POST: Companies/Delete/5
+        // POST: Admin/Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Companies == null)
+            if (_context.Categories == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Companies'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
             }
-            var company = await _context.Companies.FindAsync(id);
-            if (company != null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category != null)
             {
-                _context.Companies.Remove(company);
+                _context.Categories.Remove(category);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CompanyExists(int id)
+        private bool CategoryExists(int id)
         {
-          return (_context.Companies?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Categories?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

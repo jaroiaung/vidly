@@ -1,13 +1,17 @@
 @model IEnumerable<vidly.Models.Company>
 
 @{
-    Layout = "_Layout";
-    ViewData["Title"] = "Companies";
+    Layout = null;
 }
 
-<div>
-    <h2>@ViewData["Title"]</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -65,4 +69,5 @@
 }
     </tbody>
 </table>
-</div>
+</body>
+</html>
