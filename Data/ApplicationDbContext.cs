@@ -31,6 +31,8 @@ namespace vidly.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ShoppingCart>().HasOne(p => p.Product).WithMany().HasForeignKey(p => p.ProductId);
+            modelBuilder.Entity<ShoppingCart>().HasOne(u => u.ApplicationUser).WithMany().HasForeignKey(u => u.ApplicationUserId);
 
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },

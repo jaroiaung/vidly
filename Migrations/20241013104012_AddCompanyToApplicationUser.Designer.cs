@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using vidly.Data;
 
@@ -11,9 +12,11 @@ using vidly.Data;
 namespace vidly.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241013104012_AddCompanyToApplicationUser")]
+    partial class AddCompanyToApplicationUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -690,14 +693,14 @@ namespace vidly.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2024, 10, 18, 14, 43, 18, 301, DateTimeKind.Local).AddTicks(1150),
+                            CreatedDate = new DateTime(2024, 10, 13, 18, 40, 12, 175, DateTimeKind.Local).AddTicks(1980),
                             Details = "lorem ispum",
                             ImageUrl = "https://media.istockphoto.com/id/506903162/photo/luxurious-villa-with-pool.jpg?b=1&s=612x612&w=0&k=20&c=vcCQ5L9Tt2ZurwFhtodR6njSUnMsEn_ZqEmsa0hs9lM=",
                             Name = "Royal Villa",
                             Occupancy = 5,
                             Rate = 200.0,
                             Sqft = 550,
-                            UpdatedDate = new DateTime(2024, 10, 18, 14, 43, 18, 301, DateTimeKind.Local).AddTicks(1170)
+                            UpdatedDate = new DateTime(2024, 10, 13, 18, 40, 12, 175, DateTimeKind.Local).AddTicks(2000)
                         });
                 });
 

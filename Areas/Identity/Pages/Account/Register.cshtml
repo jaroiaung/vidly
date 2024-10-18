@@ -4,6 +4,10 @@
     ViewData["Title"] = "Register";
 }
 
+<style>
+    .form-row{ padding: 10px;}
+</style>
+
 <div class="container col-md-6">
     <div class="card shadow border-0">
     <div class="card-header bg-secondary bg-gradient">
@@ -20,53 +24,87 @@
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Name" class="form-control" placeholder="Name" />
-                <label asp-for="Input.Name">Name</label>  
-            </div>
 
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
+            <div class="form-row row">
+    <div class="form-group col">
+        <label asp-for="Input.Name">Name</label> 
+      <input asp-for="Input.Name" class="form-control" placeholder="Name" />
+                
+    </div>
+    <div class="form-group col">
+        <label asp-for="Input.Email">Email</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+      <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                
+    </div>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col">
+        <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span> 
+      <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                
+    </div>
+    <div class="form-group col">
+        <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <select style="padding: 1rem .75rem !important;" asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control form-select" >
+     <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                
+    </div>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col">
+        <label asp-for="Input.Role">Role</label>
+      <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control form-select" >
                     <option disabled selected>-Select Role-</option>
                 </select>
-                
-            </div>
+    </div>
+    <div class="form-group col">
+         <label asp-for="Input.StreetAddress">Street Address</label>  
+     <input asp-for="Input.StreetAddress" class="form-control" placeholder="Street Address" />
+               
+    </div>
+  </div>
 
-            <div class="form-floating mb-3">
-                <input asp-for="Input.StreetAddress" class="form-control" placeholder="Street Address" />
-                <label asp-for="Input.StreetAddress">Street Address</label>  
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.City" class="form-control" placeholder="City" />
-                <label asp-for="Input.City">City</label>  
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.State" class="form-control" placeholder="State" />
-                <label asp-for="Input.State">State</label>  
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.PostalCode" class="form-control" placeholder="PostalCode" />
-                <label asp-for="Input.PostalCode">Postal Code</label>  
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="PhoneNumber" />
-                <label asp-for="Input.PhoneNumber">Phone Number</label>  
-            </div>
+ <div class="form-row row">
+    <div class="form-group col">
+        <label asp-for="Input.City">City</label>
+     <input asp-for="Input.City" class="form-control" placeholder="City" />
+                
+    </div>
+    <div class="form-group col">
+        <label asp-for="Input.State">State</label> 
+     <input asp-for="Input.State" class="form-control" placeholder="State" />
+                
+    </div>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col">
+        <label asp-for="Input.PostalCode">Postal Code</label>
+     <input asp-for="Input.PostalCode" class="form-control" placeholder="PostalCode" />
+                
+    </div>
+    <div class="form-group col">
+        <label asp-for="Input.PhoneNumber">Phone Number</label>
+     <input asp-for="Input.PhoneNumber" class="form-control" placeholder="PhoneNumber" />
+                
+    </div>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col">
+         <label id="Input_CompanyId_Label" asp-for="Input.CompanyId" style="display: none;">Company</label>
+     <select asp-for="Input.CompanyId" style="display: none;" asp-items="@Model.Input.CompanyList" class="form-control form-select" >
+                    <option disabled selected>-Select Company-</option>
+                </select>
+    </div>
+    <div class="form-group col">
+     
+    </div>
+  </div>
 
 
             <button id="registerSubmit" type="submit" class="w-100 btn btn-primary">Register</button>
@@ -115,4 +153,21 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready( function () {
+            $('#Input_Role').change(function(){
+                var selection = $('#Input_Role option:selected').text();
+                if(selection == 'Company')
+                {     
+                    $('#Input_CompanyId_Label').show();
+                    $('#Input_CompanyId').show();
+                }
+                else
+                {
+                    $('#Input_CompanyId_Label').hide();
+                    $('#Input_CompanyId').hide();
+                }
+            })
+        });
+    </script>
 }
