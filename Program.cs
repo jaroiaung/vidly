@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using vidly.Utility;
 using vidly.Repository.IRepository;
 using vidly.Repository;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+
+
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.ConfigureApplicationCookie(options => {
@@ -23,6 +27,8 @@ builder.Services.ConfigureApplicationCookie(options => {
     options.LogoutPath = $"/Identity/Account/Logout";
     options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
+
+builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(100);
@@ -51,6 +57,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

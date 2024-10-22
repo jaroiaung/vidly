@@ -615,6 +615,30 @@ namespace vidly.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("vidly.Models.SendEmailTester", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PinDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SendEmailTesters");
+                });
+
             modelBuilder.Entity("vidly.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
@@ -690,14 +714,14 @@ namespace vidly.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2024, 10, 18, 14, 43, 18, 301, DateTimeKind.Local).AddTicks(1150),
+                            CreatedDate = new DateTime(2024, 10, 22, 13, 51, 4, 109, DateTimeKind.Local).AddTicks(1130),
                             Details = "lorem ispum",
                             ImageUrl = "https://media.istockphoto.com/id/506903162/photo/luxurious-villa-with-pool.jpg?b=1&s=612x612&w=0&k=20&c=vcCQ5L9Tt2ZurwFhtodR6njSUnMsEn_ZqEmsa0hs9lM=",
                             Name = "Royal Villa",
                             Occupancy = 5,
                             Rate = 200.0,
                             Sqft = 550,
-                            UpdatedDate = new DateTime(2024, 10, 18, 14, 43, 18, 301, DateTimeKind.Local).AddTicks(1170)
+                            UpdatedDate = new DateTime(2024, 10, 22, 13, 51, 4, 109, DateTimeKind.Local).AddTicks(1150)
                         });
                 });
 

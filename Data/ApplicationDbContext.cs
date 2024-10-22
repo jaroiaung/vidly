@@ -14,6 +14,8 @@ namespace vidly.Data
         {
 
         }
+        public DbSet<SendEmailTester> SendEmailTesters { get; set; }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products{ get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
@@ -26,6 +28,7 @@ namespace vidly.Data
         public DbSet<VillaNumber> VillaNumbers { get; set; }
 
         public DbSet<Company> Companies { get; set; }
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
