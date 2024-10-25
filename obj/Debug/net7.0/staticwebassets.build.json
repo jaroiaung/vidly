@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kXulecwa+XA2ZC7u0iaqq3sG9Ra//XqljZx0QyFnNjU=",
+  "Hash": "lRDWc6eIfGo4zJY42025t/6xn4b6CTJT33CYJLcY6JQ=",
   "Source": "vidly",
   "BasePath": "_content/vidly",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/wwwroot/js/order.js",
+      "SourceId": "vidly",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/wwwroot/",
+      "BasePath": "_content/vidly",
+      "RelativePath": "js/order.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/order.js"
     },
     {
       "Identity": "/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/wwwroot/js/site.js",

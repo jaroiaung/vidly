@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x/qQ1atiBL3WAG4Q5nUCLqy8+qYuNcXLK6V4yi40YfDKZIVy06nv962KVasm1uDodHZAcc8/3d55c5zjX9PfTA==",
+  "dgSpecHash": "cJgHWhkD3TQ9sd5MTh531X04vqj9dBCab+hThHgln/vicEqcNsqJzKaiaRXesHfzl12d1DcDM3AxOyZYI6Y28Q==",
   "success": true,
   "projectFilePath": "/Users/jaroiaung/Desktop/jaroi/Udemy courses/dotnet core mvc/vidly/vidly.csproj",
   "expectedPackageFiles": [
@@ -58,6 +58,7 @@
     "/Users/jaroiaung/.nuget/packages/humanizer.core.zh-hans/2.14.1/humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "/Users/jaroiaung/.nuget/packages/humanizer.core.zh-hant/2.14.1/humanizer.core.zh-hant.2.14.1.nupkg.sha512",
     "/Users/jaroiaung/.nuget/packages/mailkit/4.8.0/mailkit.4.8.0.nupkg.sha512",
+    "/Users/jaroiaung/.nuget/packages/microsoft.aspnetcore.authentication.facebook/7.0.20/microsoft.aspnetcore.authentication.facebook.7.0.20.nupkg.sha512",
     "/Users/jaroiaung/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.20/microsoft.aspnetcore.cryptography.internal.7.0.20.nupkg.sha512",
     "/Users/jaroiaung/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.20/microsoft.aspnetcore.cryptography.keyderivation.7.0.20.nupkg.sha512",
     "/Users/jaroiaung/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/7.0.20/microsoft.aspnetcore.identity.entityframeworkcore.7.0.20.nupkg.sha512",
